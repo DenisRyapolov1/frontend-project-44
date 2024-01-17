@@ -6,3 +6,5 @@ export function User() {
     const name = readlineSync.question('May I have your name? ');
     console.log(`Hello, ${name}!`);
   }
+
+  
