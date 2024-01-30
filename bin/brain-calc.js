@@ -30,7 +30,7 @@ function brainCalc(PlayerName) {
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
   console.log(`Let's try again, ${PlayerName}!`);
   return 0;
-} 
+}
 const gameName = brainCalc;
 const PlayerName = User();
 
