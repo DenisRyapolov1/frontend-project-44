@@ -1,15 +1,12 @@
 #!/usr/bin/env node
-
 import readlineSync from 'readline-sync';
 import { User } from '../src/cli.js';
 import { brainGameStart } from '../src/index.js';
-
 function randomOperation() {
   const operations = ['+', '-', '*'];
   const randomIndex = Math.floor(Math.random() * operations.length);
   return operations[randomIndex];
 }
-  
 function generateMathExpression() {
   const num1 = Math.floor(Math.random() * 101);
   const num2 = Math.floor(Math.random() * 101);
@@ -17,11 +14,9 @@ function generateMathExpression() {
   
   return `${num1} ${operator} ${num2}`;
 }
-  
 function calculateExpression(expression) {
   return eval(expression);
 }
-  
 function brainCalc(PlayerName) {
   const expression = generateMathExpression();
   const correctAnswer = calculateExpression(expression);
@@ -34,8 +29,7 @@ function brainCalc(PlayerName) {
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
   console.log(`Let's try again, ${PlayerName}!`);
   return 0;
-}
-  
+} 
 const gameName = brainCalc;
 const PlayerName = User();
 console.log('What is the result of the expression?');
