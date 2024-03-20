@@ -4,10 +4,10 @@
 
 Пример запуска игры "Проверка на четность" [![asciicast](https://asciinema.org/a/7HxSiiZ69sB77BuPnyu2pN2dO.svg)](https://asciinema.org/a/7HxSiiZ69sB77BuPnyu2pN2dO)
 
-Пример разных исходов игры "Калькулятор" https://asciinema.org/a/2t5ys8IXvXqw32ZmRJH8d9Jzn
+Пример разных исходов игры "Калькулятор" [![asciicast](https://asciinema.org/a/647780.svg)](https://asciinema.org/a/647780)
 
-Пример разных исходов игры "НОД" https://asciinema.org/a/QeXYpe9Zq8Z1Ci3fW0mxHJT8d
+Пример разных исходов игры "НОД" [![asciicast](https://asciinema.org/a/647783.svg)](https://asciinema.org/a/647783)
 
-Пример разных исходов игры "Арифметическая прогрессия" https://asciinema.org/a/eDbTQ5F68Pr6mnT7ENTOYeliW
+Пример разных исходов игры "Арифметическая прогрессия" [![asciicast](https://asciinema.org/a/647787.svg)](https://asciinema.org/a/647787)
 
-Пример разных исходов игры "Простое ли число?" https://asciinema.org/a/iqnbphESJ4huXfEHaspfsUbiu
+Пример разных исходов игры "Простое ли число?" [![asciicast](https://asciinema.org/a/647788.svg)](https://asciinema.org/a/647788)
