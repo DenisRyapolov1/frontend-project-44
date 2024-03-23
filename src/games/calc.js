@@ -1,28 +1,30 @@
-import generateRandomNumber from '../randomnumber.js';
-import Logic from '../index.js';
+import { getRandomInt } from '../cli.js';
+import { answerCheck, getAnswer } from '../index.js';
 
-const rules = 'What is the result of the expression?';
-const mathoperators = ['+', '-', '*'];
-const calculate = (num1, num2, operator) => {
-  switch (operator) {
-    case '+':
-      return num1 + num2;
-    case '-':
-      return num1 - num2;
-    case '*':
-      return num1 * num2;
+const randMax = 25; 
+export const str = 'What is the result of the expression?';
+export const a = 3; 
+
+const operations = ['+', '-', '*'];
+
+export const brainCalc = (name) => {
+  const [number1, number2] = [getRandomInt(0, randMax), getRandomInt(0, randMax)];
+  const operation = getRandomInt(0, 2);
+  let correctAnswer;
+  switch (operation) {
+    case 0:
+      correctAnswer = number1 + number2;
+      break;
+    case 1:
+      correctAnswer = number1 - number2;
+      break;
+    case 2:
+      correctAnswer = number1 * number2;
+      break;
     default:
-      return 'Unknown symbol';
+      return 0;
   }
+  const question = `${number1} ${operations[operation]} ${number2}`;
+  const answer = getAnswer(question);
+  return answerCheck(answer, correctAnswer, name);
 };
-const gameCalc = () => {
-  const num1 = generateRandomNumber(0, 100);
-  const num2 = generateRandomNumber(0, 100);
-  const indexrandomOperators = generateRandomNumber(0, mathoperators.length - 1);
-  const operator = mathoperators[indexrandomOperators];
-  const question = `${num1} ${operator} ${num2}`;
-
-  const correctAnswer = calculate(num1, num2, operator).toString();
-  return [question, correctAnswer];
-};
-export default () => Logic(gameCalc, rules);

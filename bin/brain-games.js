@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import Logic from '../src/cli.js';
+import { User } from '../src/cli.js';
 
-console.log(Logic());
+User();

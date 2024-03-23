@@ -1,13 +1,24 @@
-import Logic from '../index.js';
-import generateRandomNumber from '../randomnumber.js';
+import { getRandomInt } from '../cli.js';
+import { answerCheck, getAnswer } from '../index.js';
 
-const rules = 'Find the greatest common divisor of given numbers.';
-const gcd = (a, b) => (b ? gcd(b, a % b) : a);
-const gameGcd = () => {
-  const num1 = generateRandomNumber(0, 100);
-  const num2 = generateRandomNumber(0, 100);
-  const question = `${num1} ${num2}`;
-  const correctAnswer = gcd(num1, num2).toString();
-  return [question, correctAnswer];
+export const str = 'Find the greatest common divisor of given numbers.';
+export const c = 3; 
+const randMax = 100; 
+
+const findGCD = (num1, num2) => {
+  let a = num1;
+  let b = num2;
+  while (a !== 0 && b !== 0) {
+    if (a > b) a %= b;
+    else b %= a;
+  }
+  return a + b;
 };
-export default () => Logic(gameGcd, rules);
+
+export const brainGCD = (name) => {
+  const [number1, number2] = [getRandomInt(0, randMax), getRandomInt(0, randMax)];
+  const correctAnswer = findGCD(number1, number2);
+  const question = `${number1} ${number2}`;
+  const answer = getAnswer(question);
+  return answerCheck(answer, correctAnswer, name);
+};

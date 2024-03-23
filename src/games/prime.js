@@ -1,20 +1,35 @@
-import generateRandomNumber from '../randomnumber.js';
-import Logic from '../index.js';
+export const str = 'What number is missing in the progression?';
+export const a = 3; 
+const progressionMaxLen = 15;
+const progressionMinLen = 5;
+const progressionMaxStep = 10;
+const progressionMaxStart = 50;
 
-const isPrime = (num) => {
-  for (let i = 2; i <= Math.sqrt(num); i += 1) {
-    if (num % i === 0) {
-      return false;
-    }
+const generateProgression = (start, len, step) => {
+  const arr = [];
+  for (let i = 0; i < len; i += 1) {
+    arr.push(start + (i * step));
   }
-  return true;
+  return arr;
 };
 
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const gamePrime = () => {
-  const randomNum = generateRandomNumber(2, 100);
-  const question = `${randomNum}`;
-  const correctAnswer = isPrime(randomNum) ? 'yes' : 'no';
-  return [question, correctAnswer];
+const printProgression = (arr, index) => {
+  let str1 = '';
+  for (let i = 0; i < arr.length; i += 1) {
+    if (i !== index) str1 += `${arr[i]} `;
+    else str1 += '.. ';
+  }
+  return str1;
 };
-export default () => Logic(gamePrime, rules);
+
+export const brainProgression = (name) => {
+  const progressionStart = getRandomInt(0, progressionMaxStart);
+  const progressionStep = getRandomInt(1, progressionMaxStep);
+  const progressionLen = getRandomInt(progressionMinLen, progressionMaxLen);
+  const hidden = getRandomInt(0, progressionLen - 1);
+  const progression = generateProgression(progressionStart, progressionLen, progressionStep);
+  const correctAnswer = progression[hidden];
+  const question = `${printProgression(progression, hidden)}`;
+  const answer = getAnswer(question);
+  return answerCheck(answer, correctAnswer, name);
+};
