@@ -1,4 +1,4 @@
-import { getRandomInt } from '../cli.js';
+import { getRandom } from '../cli.js';
 import { answerCheck, getAnswer } from '../index.js';
 
 const randMax = 25; 
@@ -8,8 +8,8 @@ export const a = 3;
 const operations = ['+', '-', '*'];
 
 export const brainCalc = (name) => {
-  const [number1, number2] = [getRandomInt(0, randMax), getRandomInt(0, randMax)];
-  const operation = getRandomInt(0, 2);
+  const [number1, number2] = [getRandom(0, randMax), getRandom(0, randMax)];
+  const operation = getRandom(0, 2);
   let correctAnswer;
   switch (operation) {
     case 0:

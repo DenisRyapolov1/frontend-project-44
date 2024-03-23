@@ -7,4 +7,4 @@ export const User = () => {
   return name;
 };
 
-export const getRandomInt = (min, max) => Math.floor(Math.random() * (max + 1 - min) + min);
+export const getRandom = (min, max) => Math.floor(Math.random() * (max + 1 - min) + min);

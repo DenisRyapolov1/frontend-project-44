@@ -23,10 +23,10 @@ const printProgression = (arr, index) => {
 };
 
 export const brainProgression = (name) => {
-  const progressionStart = getRandomInt(0, progressionMaxStart);
-  const progressionStep = getRandomInt(1, progressionMaxStep);
-  const progressionLen = getRandomInt(progressionMinLen, progressionMaxLen);
-  const hidden = getRandomInt(0, progressionLen - 1);
+  const progressionStart = getRandom(0, progressionMaxStart);
+  const progressionStep = getRandom(1, progressionMaxStep);
+  const progressionLen = getRandom(progressionMinLen, progressionMaxLen);
+  const hidden = getRandom(0, progressionLen - 1);
   const progression = generateProgression(progressionStart, progressionLen, progressionStep);
   const correctAnswer = progression[hidden];
   const question = `${printProgression(progression, hidden)}`;

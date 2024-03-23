@@ -1,4 +1,4 @@
-import { getRandomInt } from '../cli.js';
+import { getRandom } from '../cli.js';
 import { answerCheck, getAnswer } from '../index.js';
 
 export const str = 'Find the greatest common divisor of given numbers.';
@@ -16,7 +16,7 @@ const findGCD = (num1, num2) => {
 };
 
 export const brainGCD = (name) => {
-  const [number1, number2] = [getRandomInt(0, randMax), getRandomInt(0, randMax)];
+  const [number1, number2] = [getRandom(0, randMax), getRandom(0, randMax)];
   const correctAnswer = findGCD(number1, number2);
   const question = `${number1} ${number2}`;
   const answer = getAnswer(question);
