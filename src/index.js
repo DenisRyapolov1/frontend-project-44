@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { User } from './cli.js';
+import { user } from './cli.js';
 
 export const getAnswer = (question) => {
   console.log(`Question: ${question}`);
@@ -7,7 +7,7 @@ export const getAnswer = (question) => {
 };
 
 export const brainGameStart = (n, str, gameName) => {
-  const name = User();
+  const name = user();
   let correctCount = 0;
   console.log(str);
   while (correctCount < n) {
