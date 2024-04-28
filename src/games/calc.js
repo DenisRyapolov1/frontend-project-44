@@ -1,9 +1,9 @@
 import { getRandom } from '../cli.js';
 import { answerCheck, getAnswer } from '../index.js';
 
-const randMax = 25; 
+const randMax = 25;
 export const str = 'What is the result of the expression?';
-export const a = 3; 
+export const a = 3;
 
 const operations = ['+', '-', '*'];
 
